@@ -53,8 +53,16 @@ export const Home = () => {
         }
     }
 
-    const AllCountries = data.map((country, index) => <Link to={"/details"} state={{country}} key={index}><CountryDetail key={country.name.common} 
-    title={country.name.common} image={country.flags.png} capital={country.capital} population={country.population}/></Link>)
+    const AllCountries = data.map((country, index) => 
+    <Link to={"/details"} state={{country}} key={index}>
+        <CountryDetail 
+        key={country.name.common} 
+        title={country.name.common} 
+        image={country.flags.png} 
+        capital={country.capital} 
+        subregion={country.subregion}
+        population={country.population}/>
+    </Link>)
     
     return (
         <div className='home'>
