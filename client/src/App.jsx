@@ -1,23 +1,17 @@
-import { useState, useEffect } from 'react';
-import { CountryDetail } from './components/CountryDetail';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from './pages/Home';
+import { Details } from './pages/Details';
 
-function App() {
-const [data, setData] = useState([]);
+const App = () => {
 
-useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data)
-      });
-  }, []);
-
-  const AllCountries = data.map((country) => <CountryDetail key={country.name.common} title={country.name.common} image={country.flags.png}/>)
-  
   return (
     <div className="App">
-      <h1>My App</h1>
-      {AllCountries}
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home/>} exact path="/" />
+          <Route element={<Details/>} path="/details"/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

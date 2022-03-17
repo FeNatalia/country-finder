@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const CountryDetail = ({title, image}) => {
+export const CountryDetail = ({ title, image }) => {
   return (
     <div>
         <img src={image} alt={title} />
