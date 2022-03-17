@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from './pages/Home';
 import { Details } from './pages/Details';
+import './styles/styles.css'
 
 const App = () => {
 
   return (
-    <div className="App">
+    <div className="page-wrapper">
       <BrowserRouter>
         <Routes>
           <Route element={<Home/>} exact path="/" />

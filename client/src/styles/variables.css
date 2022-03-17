@@ -1,0 +1,9 @@
+/* Variables */
+:root {
+    --color-dark-gray: #64686d;
+    --color-light-gray: #e6e8eb;
+    --color-light-green: rgb(190, 236, 203);
+    --color-dark-green: rgb(25, 90, 25);
+    --color-light-red: rgb(240, 184, 184);
+    --color-dark-red: rgb(223, 109, 109);
+}
