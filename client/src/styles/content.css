@@ -13,6 +13,16 @@ body {
   justify-content: center;
 }
 
+.leaflet-container {
+    width: 280px;
+    height: 150px;
+}
+
+#map { 
+    height: 180px; 
+    margin-left: 10px;
+}
+
 /*Home.jsx*/
 .home {
     display: grid;
@@ -89,7 +99,7 @@ body {
 }
 
 .details__header img {
-    width: 250px;
+    width: 90px;
 }
 
 .details__header h1 {
@@ -103,6 +113,13 @@ body {
 .details__body p {
     margin: 5px;
     font-size: 16px;
+    font-weight: 100;
+    color: var(--color-dark-green);
+}
+
+.details__body strong {
+    color: rgb(27, 5, 126);
+    font-style: italic;
 }
 
 .details___button {
@@ -170,6 +187,17 @@ body {
     .btn--primary {
         font-size: 18px;
     }
+
+    .leaflet-container {
+        width: 350px;
+        height: 200px;
+    }
+    
+    #map { 
+        height: 200px; 
+        margin-left: 50px;
+        margin-bottom: 10px;
+    }
 }
 
 /* Desktop */
@@ -218,5 +246,15 @@ body {
     .country-detail__header h3 {
         margin-top: 10px;
         font-size: 26px;
+    }
+
+    .leaflet-container {
+        width: 450px;
+        height: 250px;
+    }
+    
+    #map { 
+        height: 250px; 
+        margin-left: 10px;
     }
 }
