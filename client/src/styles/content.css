@@ -123,7 +123,7 @@ body {
 }
 
 .details__body strong {
-    color: rgb(27, 5, 126);
+    color: var(--color-blue);
     font-style: italic;
 }
 
@@ -135,8 +135,8 @@ body {
 .btn--primary {
     padding: 5px;
     font-size: 18px;
-    border: 2px solid rgb(9, 75, 48);
-    color: rgb(9, 75, 48);
+    border: 2px solid var(--color-green);
+    color: var(--color-green);
     font-weight: bold;
     border-radius: 8px;
     background-color: white;
@@ -157,6 +157,8 @@ body {
 }
 
 .country-detail__header h3 {
+    font-family: "Rubik", sans-serif;
+    color: var(--color-dark-gray);
     margin-top: 10px;
     font-size: 22px;
 }
@@ -172,6 +174,12 @@ body {
 
 .country-detail__body p{
     font-size: 16px;
+    color: var(--color-dark-green);
+}
+
+.country-detail__body strong{
+    font-style: italic;
+    color: var(--color-blue);
 }
 
 /* Tablet */
