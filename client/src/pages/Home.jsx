@@ -75,9 +75,9 @@ export const Home = () => {
                 </select>
             </section>
             <section className='home___results'>
-                {status === 0 && <p>⏱ Loading ... ⏱</p>}
+                {status === 0 && <p className="home___results__status">⏱ Loading ... ⏱</p>}
                 {status === 1 && AllCountries}
-                {status === 2 && <p>🚨 Error 🚨</p>}
+                {status === 2 && <p className="home___results__status">🚨 Error 🚨</p>}
             </section>
         </div>
     )

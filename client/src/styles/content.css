@@ -78,6 +78,11 @@ body {
 
 .home___results {
     display: grid;
+    justify-content: center;
+}
+
+.home___results__status {
+    font-size: 20px;
 }
 
 .home___results a {
@@ -181,7 +186,7 @@ body {
     }
 
     .details__header img {
-        width: 350px;
+        width: 150px;
     }
 
     .btn--primary {
@@ -195,7 +200,7 @@ body {
     
     #map { 
         height: 200px; 
-        margin-left: 50px;
+        margin-left: 10px;
         margin-bottom: 10px;
     }
 }
@@ -212,7 +217,7 @@ body {
     }
     
     .details__header img {
-        width: 450px;
+        width: 200px;
     }
 
     .home___header h2{
