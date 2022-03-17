@@ -1,28 +1,12 @@
-/*  Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body{
-  height: 100%;
-}
-
-/* Variables */
-:root {
-  --color-dark-gray: #64686d;
-  --color-light-gray: #e6e8eb;
-  --color-light-green: rgb(190, 236, 203);
-  --color-dark-green: rgb(25, 90, 25);
-  --color-light-red: rgb(240, 184, 184);
-  --color-dark-red: rgb(223, 109, 109);
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap");
 
 /* CSS */
 /*App.jsx*/
+body {
+    background-color: var(--color-light-blue);
+}
+
 .page-wrapper {
   font-family: 'Public Sans', sans-serif;
   display: grid;
@@ -39,6 +23,23 @@ html, body{
     margin: 10px;
     padding: 10px;
     text-align: center;
+    font-family: "Rubik", sans-serif;
+}
+
+.home___header h2{
+    font-size: 30px;
+    color: var(--color-dark-green);
+}
+
+.home___header p{
+    font-size: 20px;
+    padding: 10px;
+    color: var(--color-dark-gray);
+}
+
+.home___header img {
+    width: 90px;
+    height: auto;
 }
 
 .home___search {
@@ -53,7 +54,7 @@ html, body{
     height: 22px;
     margin: 5px;
     border-radius: 4px;
-    border: 1px solid rgb(65, 62, 62);
+    border: 1px solid var(--color-dark-gray);
     padding: 5px;
     font-size: 16px;
 }
@@ -116,7 +117,7 @@ html, body{
 .country-detail{
     margin: 10px;
     padding: 10px;
-    background-color: rgb(212, 238, 229);
+    background-color: var(--color-light-green);
     border-radius: 8px;
 }
 
@@ -139,10 +140,19 @@ html, body{
     padding: 10px;
 }
 
+.country-detail__body p{
+    font-size: 16px;
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
     .home___results {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .home___header img {
+        width: 120px;
+        height: auto;
     }
 }
 
@@ -150,5 +160,18 @@ html, body{
 @media screen and (min-width: 1200px) {
     .home___results {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .home___header img {
+        width: 180px;
+        height: auto;
+    }
+
+    .home___header h2{
+        font-size: 36px;
+    }
+    
+    .home___header p{
+        font-size: 24px;
     }
 }

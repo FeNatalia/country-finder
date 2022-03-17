@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CountryDetail } from '../components/CountryDetail';
+import Logo from "../assets/logo.png";
 
 export const Home = () => {
     const [status, setStatus] = useState(0);
@@ -24,11 +25,14 @@ export const Home = () => {
 
     const searchCountry = async country => {
         try {
-            if (country.length < 3 || country === '') return
-            const res = await fetch(`api/${country}`)
-            const data = await res.json()
-            await setData(data);
-            setStatus(1);
+            if (country.length < 3 || country === '') {
+                return;
+            } else {
+                const res = await fetch(`api/${country}`)
+                const data = await res.json()
+                await setData(data);
+                setStatus(1);
+            }
         } catch {
             setStatus(2);
         }
@@ -36,11 +40,14 @@ export const Home = () => {
 
     const filterByRegion = async region => {
         try {
-            if (region === "") return
-            const res = await fetch(`api/region/${region}`)
-            const data = await res.json()
-            await setData(data);
-            setStatus(1);
+            if (region === "") {
+                getAllCountries();
+            } else {
+                const res = await fetch(`api/region/${region}`)
+                const data = await res.json()
+                await setData(data);
+                setStatus(1);
+            }
         } catch {
             setStatus(2);
         }
@@ -52,11 +59,12 @@ export const Home = () => {
     return (
         <div className='home'>
             <header className='home___header'>
-                <h2>Country Finder App</h2>
+                <img src={Logo} alt="planet" />
+                <h2>Country Finder</h2>
                 <p>Learn about the world with us</p>
             </header>
             <section className='home___search'>
-                <input type="text" placeholder='Search for a country' onChange={(e) => searchCountry(e.target.value)}/>
+                <input type="text" placeholder='Search a country' onChange={(e) => searchCountry(e.target.value)}/>
                 <select onChange={ region => filterByRegion(region.target.value)}>
                     <option value="">Countries by Region</option>
                     <option value="asia">Asia</option>

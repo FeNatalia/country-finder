@@ -12,7 +12,9 @@ app.get("/api", (req, res) => {
     axios({
         url: url,
         responseType: 'json'
-    }).then(data => res.json(data.data))
+    })
+    .then(data => res.json(data.data))
+    .catch(err => res.json(err.message))
 });
 
 app.get("/api/:name", (req, res) => {
@@ -20,7 +22,9 @@ app.get("/api/:name", (req, res) => {
     axios({
         url: url,
         responseType: 'json'
-    }).then(data => res.json(data.data))
+    })
+    .then(data => res.json(data.data))
+    .catch(err => res.json(err.message))
 });
 
 app.get("/api/region/:name", (req, res) => {
@@ -28,7 +32,9 @@ app.get("/api/region/:name", (req, res) => {
     axios({
         url: url,
         responseType: 'json'
-    }).then(data => res.json(data.data))
+    })
+    .then(data => res.json(data.data))
+    .catch(err => res.json(err.message))
 });
 
 app.listen(PORT, () => {
