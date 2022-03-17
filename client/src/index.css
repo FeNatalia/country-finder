@@ -24,86 +24,131 @@ html, body{
 /* CSS */
 /*App.jsx*/
 .page-wrapper {
-font-family: 'Public Sans', sans-serif;
-display: grid;
-justify-content: center;
+  font-family: 'Public Sans', sans-serif;
+  display: grid;
+  justify-content: center;
 }
 
 /*Home.jsx*/
 .home {
-  display: grid;
-  justify-content: center;
+    display: grid;
+    justify-content: center;
 }
 
 .home___header {
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
 }
 
 .home___search {
-  display: grid;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 10px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .home___search input {
-  width: 200px;
-  height: 22px;
-  margin: 5px;
-  border-radius: 4px;
-  border: 1px solid rgb(65, 62, 62);
-  padding: 5px;
-  font-size: 16px;
+    width: 200px;
+    height: 22px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px solid rgb(65, 62, 62);
+    padding: 5px;
+    font-size: 16px;
 }
 
 .home___search select {
-  width: 200px;
-  font-size: 16px;
-  margin: 5px;
+    width: 200px;
+    font-size: 16px;
+    margin: 5px;
 }
 
 .home___results {
-  display: grid;
+    display: grid;
 }
+
+.home___results a {
+    text-decoration: none;
+    color: black;
+}
+
+/*Details.jsx*/
+.details {
+    margin: 10px;
+    padding: 10px;
+    display: grid;
+    justify-content: center;
+}
+
+.details__header {
+    text-align: center;
+    margin: 10px;
+}
+
+.details__header h1 {
+    margin: 10px;
+}
+
+.details__body {
+    margin: 10px;
+}
+
+.details__body p {
+    margin: 5px;
+}
+
+.details___button {
+    text-align: center;
+    margin: 10px;
+}
+
+.btn--primary {
+    padding: 5px;
+    border: 2px solid rgb(9, 75, 48);
+    color: rgb(9, 75, 48);
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: white;
+}
+
 /* CountryDetail.jsx */
 .country-detail{
-  margin: 10px;
-  padding: 10px;
-  background-color: rgb(212, 238, 229);
-  border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(212, 238, 229);
+    border-radius: 8px;
 }
 
 .country-detail__header {
-  display: grid;
-  justify-content: center;
-  text-align: center;
+    display: grid;
+    justify-content: center;
+    text-align: center;
 }
 
 .country-detail__header h3 {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .country-detail__header img {
-  width: 250px;
+    width: 250px;
 }
 
 .country-detail__body {
-  margin: 10px;
-  padding: 10px;
+    margin: 10px;
+    padding: 10px;
 }
 
 /* Tablet */
 @media screen and (min-width: 768px) {
-  .home___results {
-      grid-template-columns: 1fr 1fr;
-  }
+    .home___results {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
-  .home___results {
-      grid-template-columns: 1fr 1fr 1fr;
-  }
+    .home___results {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

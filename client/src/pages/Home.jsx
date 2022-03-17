@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { CountryDetail } from '../components/CountryDetail';
 
 export const Home = () => {
@@ -29,9 +30,9 @@ export const Home = () => {
         await setData(data);
     }
 
-    const AllCountries = data.map((country) => <CountryDetail key={country.name.common} 
-    title={country.name.common} image={country.flags.png} capital={country.capital} population={country.population}/>)
-
+    const AllCountries = data.map((country, index) => <Link to={"/details"} state={{country}} key={index}><CountryDetail key={country.name.common} 
+    title={country.name.common} image={country.flags.png} capital={country.capital} population={country.population}/></Link>)
+    
     return (
         <div className='home'>
             <header className='home___header'>
