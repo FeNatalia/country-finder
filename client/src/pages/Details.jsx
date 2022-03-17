@@ -14,9 +14,9 @@ export const Details = () => {
         <h3>Official name: {state.country.name.official}</h3>
       </header>
       <section className='details__body'>
-        <p>Region: {state.country.region}</p>
-        <p>Subregion: {state.country.subregion}</p>
-        <p>Population: {state.country.population}</p>
+        <p><strong>Region: </strong>{state.country.region}</p>
+        <p><strong>Subregion: </strong>{state.country.subregion}</p>
+        <p><strong>Population: </strong>{state.country.population}</p>
       </section>
       <div className='details___button'>
         <button className="btn--primary" onClick={ () =>goBackButton()}>
