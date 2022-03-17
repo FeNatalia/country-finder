@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
 
 /* CSS */
-/* Page */
+/*App.jsx*/
 .page-wrapper {
   font-family: 'Public Sans', sans-serif;
   display: grid;
@@ -19,6 +19,7 @@
     padding: 10px;
     text-align: center;
 }
+
 .home___search {
     display: grid;
     justify-content: center;
@@ -35,12 +36,16 @@
     padding: 5px;
     font-size: 16px;
 }
+
 .home___search select {
     width: 200px;
     font-size: 16px;
     margin: 5px;
 }
 
+.home___results {
+    display: grid;
+}
 /* CountryDetail.jsx */
 .country-detail{
     margin: 10px;
@@ -49,19 +54,35 @@
     border-radius: 8px;
 }
 
-.country-detail__header{
+.country-detail__header {
     display: grid;
     justify-content: center;
     text-align: center;
 }
-.country-detail__header h3{
+
+.country-detail__header h3 {
     margin-top: 10px;
 }
-.country-detail__header img{
+
+.country-detail__header img {
     width: 250px;
 }
 
-.country-detail__body{
+.country-detail__body {
     margin: 10px;
     padding: 10px;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .home___results {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    .home___results {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
