@@ -13,6 +13,16 @@ body {
   justify-content: center;
 }
 
+.leaflet-container {
+    width: 280px;
+    height: 150px;
+}
+
+#map { 
+    height: 180px; 
+    margin-left: 10px;
+}
+
 /*Home.jsx*/
 .home {
     display: grid;
@@ -60,6 +70,7 @@ body {
 }
 
 .home___search select {
+    -webkit-appearance: menulist-button;
     width: 200px;
     font-size: 16px;
     margin: 5px;
@@ -67,6 +78,11 @@ body {
 
 .home___results {
     display: grid;
+    justify-content: center;
+}
+
+.home___results__status {
+    font-size: 20px;
 }
 
 .home___results a {
@@ -87,6 +103,10 @@ body {
     margin: 10px;
 }
 
+.details__header img {
+    width: 90px;
+}
+
 .details__header h1 {
     margin: 10px;
 }
@@ -97,6 +117,14 @@ body {
 
 .details__body p {
     margin: 5px;
+    font-size: 16px;
+    font-weight: 100;
+    color: var(--color-dark-green);
+}
+
+.details__body strong {
+    color: rgb(27, 5, 126);
+    font-style: italic;
 }
 
 .details___button {
@@ -106,6 +134,7 @@ body {
 
 .btn--primary {
     padding: 5px;
+    font-size: 18px;
     border: 2px solid rgb(9, 75, 48);
     color: rgb(9, 75, 48);
     font-weight: bold;
@@ -114,7 +143,7 @@ body {
 }
 
 /* CountryDetail.jsx */
-.country-detail{
+.country-detail {
     margin: 10px;
     padding: 10px;
     background-color: var(--color-light-green);
@@ -129,6 +158,7 @@ body {
 
 .country-detail__header h3 {
     margin-top: 10px;
+    font-size: 22px;
 }
 
 .country-detail__header img {
@@ -154,6 +184,25 @@ body {
         width: 120px;
         height: auto;
     }
+
+    .details__header img {
+        width: 150px;
+    }
+
+    .btn--primary {
+        font-size: 18px;
+    }
+
+    .leaflet-container {
+        width: 350px;
+        height: 200px;
+    }
+    
+    #map { 
+        height: 200px; 
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 /* Desktop */
@@ -166,6 +215,10 @@ body {
         width: 180px;
         height: auto;
     }
+    
+    .details__header img {
+        width: 200px;
+    }
 
     .home___header h2{
         font-size: 36px;
@@ -173,5 +226,40 @@ body {
     
     .home___header p{
         font-size: 24px;
+    }
+
+    .home___search input {
+        width: 300px;
+        height: 26px;
+        font-size: 20px;
+    }
+    
+    .home___search select {
+        width: 300px;
+        height: 26px;
+    }
+
+    .details__body p {
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .country-detail__body p{
+        font-size: 18px;
+    }
+
+    .country-detail__header h3 {
+        margin-top: 10px;
+        font-size: 26px;
+    }
+
+    .leaflet-container {
+        width: 450px;
+        height: 250px;
+    }
+    
+    #map { 
+        height: 250px; 
+        margin-left: 10px;
     }
 }
