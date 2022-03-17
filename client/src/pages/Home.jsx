@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { CountryDetail } from '../components/CountryDetail';
 
 export const Home = () => {
+    const [status, setStatus] = useState(0);
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -11,23 +12,38 @@ export const Home = () => {
     }, []);
 
     const getAllCountries = async () => {
-        const res = await fetch("/api");
-        const data = await res.json();
-        await setData(data);
+        try {
+            const res = await fetch("/api");
+            const data = await res.json();
+            await setData(data);
+            setStatus(1);
+        } catch {
+            setStatus(2);
+        }
     }
 
     const searchCountry = async country => {
-        if (country.length < 3 || country === '') return
-        const res = await fetch(`api/${country}`)
-        const data = await res.json()
-        await setData(data);
+        try {
+            if (country.length < 3 || country === '') return
+            const res = await fetch(`api/${country}`)
+            const data = await res.json()
+            await setData(data);
+            setStatus(1);
+        } catch {
+            setStatus(2);
+        }
     }
 
     const filterByRegion = async region => {
-        if (region === "") return
-        const res = await fetch(`api/region/${region}`)
-        const data = await res.json()
-        await setData(data);
+        try {
+            if (region === "") return
+            const res = await fetch(`api/region/${region}`)
+            const data = await res.json()
+            await setData(data);
+            setStatus(1);
+        } catch {
+            setStatus(2);
+        }
     }
 
     const AllCountries = data.map((country, index) => <Link to={"/details"} state={{country}} key={index}><CountryDetail key={country.name.common} 
@@ -51,7 +67,9 @@ export const Home = () => {
                 </select>
             </section>
             <section className='home___results'>
-                {AllCountries}
+                {status === 0 && <p>⏱ Loading ... ⏱</p>}
+                {status === 1 && AllCountries}
+                {status === 2 && <p>🚨 Error 🚨</p>}
             </section>
         </div>
     )
