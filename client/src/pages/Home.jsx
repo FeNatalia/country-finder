@@ -24,11 +24,14 @@ export const Home = () => {
 
     const searchCountry = async country => {
         try {
-            if (country.length < 3 || country === '') return
-            const res = await fetch(`api/${country}`)
-            const data = await res.json()
-            await setData(data);
-            setStatus(1);
+            if (country.length < 3 || country === '') {
+                return;
+            } else {
+                const res = await fetch(`api/${country}`)
+                const data = await res.json()
+                await setData(data);
+                setStatus(1);
+            }
         } catch {
             setStatus(2);
         }
@@ -36,11 +39,14 @@ export const Home = () => {
 
     const filterByRegion = async region => {
         try {
-            if (region === "") return
-            const res = await fetch(`api/region/${region}`)
-            const data = await res.json()
-            await setData(data);
-            setStatus(1);
+            if (region === "") {
+                getAllCountries();
+            } else {
+                const res = await fetch(`api/region/${region}`)
+                const data = await res.json()
+                await setData(data);
+                setStatus(1);
+            }
         } catch {
             setStatus(2);
         }
