@@ -1,11 +1,18 @@
 const express = require("express");
+const axios = require('axios');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
+    const url = 'https://restcountries.com/v3.1/all';
+    axios({
+        url: url,
+        responseType: 'json'
+    }).then(data => res.json(data.data))
 });
 
 app.listen(PORT, () => {
